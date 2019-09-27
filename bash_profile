@@ -26,3 +26,4 @@ export CGO_LDFLAGS="-L/usr/local/Cellar/opencv/4.1.0/lib -lopencv_stitching -lop
 
 alias ll="ls -alh"
 
+source /Users/theapemachine/.ghcup/env
