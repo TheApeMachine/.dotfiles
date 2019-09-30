@@ -11,9 +11,15 @@ set shiftround
 set ruler
 set foldmethod=indent
 set foldlevel=99
+set cursorline
 
 syntax enable
 filetype plugin on
+
+set t_Co=256
+set termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 " FINDING FILES
 set path+=**
@@ -39,11 +45,17 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-endwise'
 Plugin 'fatih/vim-go'
+Plugin 'caglartoklu/ftcolor.vim'
+Plugin 'vim-python/python-syntax'
+Plugin 'caglartoklu/borlandp.vim'
+Plugin 'morhetz/gruvbox'
 call vundle#end()
 filetype plugin indent on
 
-""set background=dark
-""colorscheme palenight
+set background=dark
+colorscheme scarface
+
+let g:python_highlight_all = 1
 
 " Disable Ex mode.
 nnoremap Q <Nop>
@@ -93,8 +105,10 @@ nnoremap <leader>q :quit<CR>
 
 " Tabs.
 nnoremap <leader>t :tabnew<CR>
-nnoremap	<leader>n :tabprevious<CR>
+nnoremap <leader>n :tabprevious<CR>
 nnoremap <leader>m :tabnext<CR>
+nnoremap <leader>w :tabclose<cr>
+nnoremap <leader>e :tabonly<cr>
 
 " Panes.
 nnoremap <leader>\ :vsplit<cr>
@@ -141,3 +155,12 @@ function QuoteDelim(char)
  return a:char.a:char."\<Esc>i"
  endif
 endf
+
+" Helpers for creating color schemes.
+nmap <C-S-O> :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+	if !exists("*synstack")
+		return
+	endif
+	echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunction
