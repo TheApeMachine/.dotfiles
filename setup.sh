@@ -9,3 +9,4 @@ ln -sv ~/dotfiles/bash_profile ~/.bash_profile
 ln -sv ~/dotfiles/zshrc ~/.zshrc
 ln -sv ~/dotfiles/vimrc ~/.vimrc
 ln -sv ~/dotfiles/tmux.conf ~/.tmux.conf
+ln -sv ~/dotfiles/scarface.vim ~/.vim/colors/scarface.vim

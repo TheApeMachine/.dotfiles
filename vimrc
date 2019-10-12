@@ -38,6 +38,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'christoomey/vim-tmux-runner'
+Plugin 'ycm-core/YouCompleteMe'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
@@ -47,8 +48,7 @@ Plugin 'tpope/vim-endwise'
 Plugin 'fatih/vim-go'
 Plugin 'caglartoklu/ftcolor.vim'
 Plugin 'vim-python/python-syntax'
-Plugin 'caglartoklu/borlandp.vim'
-Plugin 'morhetz/gruvbox'
+Plugin 'davidhalter/jedi-vim'
 call vundle#end()
 filetype plugin indent on
 
@@ -80,6 +80,7 @@ nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
 nnoremap <space> za
+nnoremap <leader>. $
 
 inoremap ( ()<Esc>i
 inoremap [ []<Esc>i
@@ -114,6 +115,7 @@ nnoremap <leader>e :tabonly<cr>
 nnoremap <leader>\ :vsplit<cr>
 nnoremap <leader>- :split<cr>
 nnoremap <leader>/ :Ex<cr>
+nnoremap <leader>o :only<cr>
 
 " Tmux stuff.
 nnoremap <leader>r :VtrSendCommandToRunner!<cr>

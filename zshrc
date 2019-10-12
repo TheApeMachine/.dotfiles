@@ -61,6 +61,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 #
+alias cleanmux="tmux list-sessions | grep -v attached | cut -d: -f1 |  xargs -t -n1 tmux kill-session -t"
+
 export GOPATH="${HOME}/go"
 export GOROOT="$(brew --prefix golang)/libexec"
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
@@ -71,3 +73,4 @@ eval "$(rbenv init -)"
 source /Users/theapemachine/.ghcup/env
 source ~/.iterm2_shell_integration.zsh
 
+export GOOGLE_APPLICATION_CREDENTIALS="/Users/theapemachine/.keys/experiments-fa6f80a0d5de.json"
