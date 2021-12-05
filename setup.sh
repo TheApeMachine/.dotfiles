@@ -1,12 +1,11 @@
 #!/bin/bash
 
-mv ~/.bash_profile ~/dotfiles/backup/bash_profile
-mv ~/.zshrc ~/dotfiles/backup/zshrc
-mv ~/.vimrc ~/dotfiles/backup/vimrc
-mv ~/.tmux.conf ~/dotfiles/backup/tmux.conf
+mv ~/.zshrc ~/dotfiles/backup/
+mv ~/.config/nvim/init.vim ~/dotfiles/backup/
+mv ~/.tmux.conf ~/dotfiles/backup/
 
-ln -sv ~/dotfiles/bash_profile ~/.bash_profile
-ln -sv ~/dotfiles/zshrc ~/.zshrc
-ln -sv ~/dotfiles/vimrc ~/.vimrc
-ln -sv ~/dotfiles/tmux.conf ~/.tmux.conf
-ln -sv ~/dotfiles/scarface.vim ~/.vim/colors/scarface.vim
+git add . && git commit -m "Latest Backup" && git push
+
+ln -sv ~/dotfiles/.zshrc ~/.zshrc
+ln -sv ~/dotfiles/init.vim ~/.config/nvim/init.vim
+ln -sv ~/dotfiles/.tmux.conf ~/.tmux.conf
